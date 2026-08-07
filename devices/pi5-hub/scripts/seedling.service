@@ -1,0 +1,17 @@
+[Unit]
+Description=Seedling Monitor MQTT Subscriber
+After=network-online.target mosquitto.service postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=rashawnoverton
+WorkingDirectory=/home/rashawnoverton
+ExecStart=/usr/bin/python3 /home/rashawnoverton/seedling_monitor.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Seedling Dashboard Flask App
+After=network.target
+
+[Service]
+User=rashawnoverton
+WorkingDirectory=/home/rashawnoverton
+ExecStart=/usr/bin/python3 /home/rashawnoverton/seedling_dashboard.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
